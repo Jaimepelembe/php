@@ -1,0 +1,55 @@
+@import url("style.css");
+
+h1{
+ text-align: center;
+}
+
+.container{
+  margin:0px auto;
+  margin-top:20px;
+  max-width:380px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/*Inputs*/
+.input {
+  width:132px;
+  height:16px;
+   padding: 10px;
+   font-size: 16px;
+   outline: none;
+ }
+ 
+ 
+ #buttonCalculate{
+   width: 120px;
+   height:48px;
+   padding: 10px;
+   border: none;
+   outline:none;
+   border-radius: 8px;
+   font-size: 14px;
+   background-color: var(--cor-botao-enviar);
+   color: var(--cor-preto);
+ }
+
+
+ 
+ #buttonShow:hover{
+  background-color: var(--cor-botao-enviar-hover);
+  cursor: pointer;
+}
+
+#fieldset{
+/*Box model*/
+padding:10px 20px;
+max-width:300px;
+border: 2px solid var(--cor-botao-limpar-hover); 
+}
+
+ul{
+list-style:none;
+
+}

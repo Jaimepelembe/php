@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário PHP</title>
+ <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <form enctype="multipart/form-data" action="php_2.php" method="post" >
+      <div class="containerInput">Nome <input type="text" name="nome" size=30 class="input" /></div>
+      <div class="containerInput">Idade <input type="text" id="idade" name="idade" size="2" class="input"/></div>
+      <div class="containerInput">
+        Qual o carro que mais gostas?
+        <select name="marca">
+          <option>Ferrari</option>
+          <option>Mercedes</option>
+          <option>BMW</option>
+          <option>Tesla</option>
+          <option>Toyota</option>
+          <option>Lamborguini</option>
+        </select>
+      </div>
+      <div class="containerInput"><input type="submit" value="OK"  id="output" class="output"/></div>
+      <div class="containerInput"></div>
+
+    </form>
+  </body>
+</html>

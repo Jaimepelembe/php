@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
+
+:root {
+  /*Cores*/
+  --cor-azul: #13bae8;
+  --cor-azul-claro-50: #89ddf4;
+  --cor-roxo: #222e50;
+  --cor-vermelho: #e5625e;
+  --cor-vermelho-claro-40: #ea817e;
+  --cor-branco: #fff;
+  --cor-preto: #000;
+
+  /*Fontes*/
+  --fonte-conteudo: "PT Serif", verdana, Geneva, Tahoma;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: var(--fonte-conteudo);
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--cor-azul);
+  padding-top: 40px;
+}
+
+#formulario {
+  padding: 20px;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 30px;
+  background-color: var(--cor-roxo);
+  color: var(--cor-branco);
+  border-radius: 20px;
+}
+
+
+#legenda {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: var(--cor-azul);
+}
+
+fieldset {
+  padding: 10px;
+  border-color: var(--cor-azul);
+  border-width: 2px;
+}
+div {
+  margin-bottom: 35px;
+}
+
+.div_input {
+  position: relative;
+}
+
+.label_entrada_dado {
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.entrada_dado {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--cor-branco);
+  outline: none;
+  color: var(--cor-branco);
+  width: 100%;
+}
+
+.entrada_dado:focus ~ .label_entrada_dado,
+.entrada_dado:valid ~ .label_entrada_dado {
+  color: orange;
+  font-size:12px;
+}
+
+#label_data_nascimento {
+  top: -25px;
+  font-weight: 700;
+  margin-right: 15px;
+}
+
+#iddata_nascimento {
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+#div_saida_dados {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.saida_dados {
+  width: 60%;
+  padding: 10px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
+  color: var(--cor-preto);
+}
+.saida_dados:hover {
+  cursor: pointer;
+}
+
+#botao_enviar {
+  background-color: var(--cor-azul);
+  margin-bottom: 20px;
+}
+#botao_enviar:hover {
+  background-color: var(--cor-azul-claro-50);
+}
+
+#botao_limpar {
+  background-color: var(--cor-vermelho);
+  color: var(--cor-branco);
+}
+#botao_limpar:hover {
+  background-color: var(--cor-vermelho-claro-40);
+}

@@ -1,0 +1,40 @@
+@import url("style.css");
+
+h1{
+ text-align: center;
+}
+
+.containerOutput{
+/*Box model*/
+width:100%;
+max-width:800px;
+}
+
+/*Inputs*/
+.input {
+  width:132px;
+  height:32px;
+   padding: 10px;
+   font-size: 16px;
+   outline: none;
+ }
+ 
+ 
+ #buttonShow{
+   width: 120px;
+   height:48px;
+   padding: 10px;
+   border: none;
+   outline:none;
+   border-radius: 8px;
+   font-size: 14px;
+   background-color: var(--cor-botao-enviar);
+   color: var(--cor-preto);
+ }
+
+
+ 
+ #buttonShow:hover{
+  background-color: var(--cor-botao-enviar-hover);
+  cursor: pointer;
+}

@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  --colorBlack: #000000;
+  --colorWhite: #ffffff;
+  --colorBlackRich: #001524;
+  --colorBlueDark: #15616d;
+  --colorBlueLight20: #44818a;
+
+  --colorPinkPapaya: #ffecd1;
+  --colorOrange: #ff7d00;
+  --colorOrangeBlack30:#b35800;
+  --fontTitle: "Roboto", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+    height:100vh;
+}
+
+.title {
+  height: 92px;
+  gap: 5px;
+}
+#header {
+  width: 80%;
+  height: 100%;
+  background-color: var(--colorOrange);
+}
+h1 {
+  font-size: 32px;
+  color: var(--colorWhite);
+  text-align: center;
+  margin:20px;
+
+}
+
+#ads {
+  width: 20%;
+  height: 100%;
+
+  background-color: var(--colorOrange);
+}
+#logo {
+  width: 48px;
+  height: 48px;
+  margin-left: 20px;
+}
+
+/*Leftside*/
+#leftSide {
+    float: left;
+    /*Box model*/
+    width: 25%;
+    height:100%;
+    min-width:200px;
+    background-color: var(--colorOrangeBlack30);
+    color:var(--colorWhite);
+  }
+
+  .link {
+    color: #fff;
+    text-decoration: none;
+    font-size:16px;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+  }
+
+  ul{
+margin:20px;
+
+
+
+  }
+  
+
+/*Content*/
+
+#content{
+width:60%;
+height:75vh;
+float:right;
+margin-top:40px;
+}
+#form{
+display:flex;
+flex-direction:column;
+align-items: baseline;
+gap:20px;
+
+
+}
+
+
+.container{
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    
+    }
+
+
+label{
+font-size:16px;
+
+}
+
+#titleConversor{
+color:var(--colorBlack);
+font-size:24px;
+
+}
+
+.input {
+    width: 100px;
+    height:20px;
+    padding: 5px;
+    font-size: 16px;
+    border:2px solid var(--colorBlueDark);
+    border-radius:8px;
+    outline: none;
+  }
+  
+.button {
+    /*box-model*/
+    width: 132px;
+    height: 48px;
+    background-color: var(--colorBlueDark);
+    border:none;
+    border-radius:8px;
+  
+    /*Display stuff*/
+    align-items: center;
+  
+    /*typography*/
+    color: var(--colorWhite);
+  
+    /*Geral settings*/
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .button:hover {
+    /*box-model*/
+    background-color: var(--colorBlueLight20);
+  }
+
+
+/*Footer*/
+
+#footer {
+    /*Display stuff*/
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+   gap:20px;
+
+   /*Box model*/
+   width:94%;
+    clear: both;
+    background-color: var(--colorOrange);
+    color: #fff;
+    height: 80px;
+    padding:20px;
+  }
+.paragraph{
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-size:14px;
+color:var(--colorWhite);
+
+}
+
+
+
+
+.flexboxRow {
+  /*Display stuff*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

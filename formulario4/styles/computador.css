@@ -1,0 +1,8 @@
+#div_saida_dados {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.saida_dados{width:40%;}
+
+#botao_enviar{margin-bottom:0px;}

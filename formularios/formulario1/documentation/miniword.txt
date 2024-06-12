@@ -1,0 +1,4 @@
+O usuário pode fazer a sua inscrição no sistema colocando o seu nome e a senha de acesso.
+Para acessar o sistema o usuário deve fazer o login usando o seu nome de usuário e a sua palavra passe.
+No sistema o usuário pode adicionar, actualizar, listar e remover os seus contactos, um contacto tem o nome do contacto, número de telefone e o email.
+O usuário pode ter um ou mais contactos, e um contacto pode pertencer a vários usuários distintos. 

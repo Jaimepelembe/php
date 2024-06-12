@@ -1,0 +1,40 @@
+#box_tela_login {
+  width: 50vw;
+  padding: 60px;
+}
+
+.titulo {
+  font-size: 48px;
+}
+
+.div_input {
+  flex-direction: row;
+  align-items: center;
+}
+
+.label {
+  margin-right: 15px;
+  font-size: 36px;
+}
+
+.input {
+  height: 35px;
+  padding: 5px;
+  font-size: 24px;
+}
+
+#div_output {
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+#idsenha {
+  padding-right: 56px;
+}
+
+
+#icone_olho {
+  top:22%;
+  right: 92%;
+}

@@ -1,0 +1,18 @@
+@import url("style.css");
+@import url("exer3.css");
+
+/*Inputs*/
+.input {
+  /*Box model*/
+  height: 24x;
+}
+
+.containerOutput {
+  display: none;
+}
+
+.year{
+  /*Typograph*/
+  color:var(--cor-botao-limpar);
+  font-size:18px;
+  }

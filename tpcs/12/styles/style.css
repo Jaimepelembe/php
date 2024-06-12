@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Noto+Serif+Khitan+Small+Script&display=swap");
+
+:root {
+  /*Cores
+  --cor-verde: #2afc98;*/
+  --cor-preto: #000000;
+  --cor-branco: #fff;
+  --cor-background: #ebf2fa;
+  --cor-background-form: #0d1321;
+  --cor-botao-enviar: #fcca46;
+  --cor-botao-enviar-hover: #fdda7e;
+  --cor-botao-limpar: #fe4a49;
+  --cor-botao-limpar-hover: #fe6e6d;
+
+  /*Fontes*/
+  --fonte-titulo: "Noto Serif Khitan Small Script", serif;
+  --fonte-conteudo: "Noto Serif JP", serif;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  /*Box model*/
+  margin-top: 20px;
+  padding: 0 20px;
+  background: var(--cor-background);
+  height: 100%;
+
+  /*Typograph*/
+  font-family: var(--fonte-conteudo);
+  font-size: 16px;
+}
+
+.container {
+  /*Display stuff*/
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  /*Box model*/
+  margin: 0px auto;
+  margin-top: 20px;
+  max-width: 320px;
+}
+
+/*Inputs*/
+.input {
+  /*Box model*/
+  width: 216px;
+  height: 16px;
+  padding: 10px;
+  outline: none;
+
+  /*Typograph*/
+  font-size: 16px;
+}
+
+.output {
+  /*Box model*/
+  width: 84px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background-color: var(--cor-botao-enviar);
+
+  /*Dispaly stuff*/
+  font-size: 16px;
+  color: var(--cor-preto);
+}
+
+#output:hover {
+  background-color: var(--cor-botao-enviar-hover);
+  cursor: pointer;
+}
+
+#reset {
+  background-color: var(--cor-botao-limpar);
+  color: var(--cor-branco);
+}
+
+#reset:hover {
+  background-color: var(--cor-botao-limpar-hover);
+  cursor: pointer;
+}
