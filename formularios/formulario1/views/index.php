@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="styles/homeMobile.css" media="all">
-    <link rel="stylesheet" href="styles/homeDesktop.css" media="screen and (min-width:768px)">
+    <title>Contacto online</title>
+    <link rel="stylesheet" href="styles/indexMobile.css" media="all">
+    <link rel="stylesheet" href="styles/indexDesktop.css" media="screen and (min-width:768px)">
+    <link rel="shortcut icon" href="images/telephonered.png" type="image/x-icon">
+
 </head>
 
 <body>
     <header>
         <a href="#" class="link">Contacto Online</a>
         <div id="containerButtons">
-            <a href="login.php"> <button id="buttonLogin" class="button">Login</button> </a>
-
-            <a href="signup.php"> <button class="button" id="buttonSignup">Signup</button></a>
+            <button id="buttonLogin" class="button">Login</button>
+            <button id="buttonSignup" class="button">Signup</button>
         </div>
+
+        <!--Load the javascript-->
+        <script src="javascript/index.js"></script>
     </header>
 
     <main id="main">

@@ -61,7 +61,8 @@ class User
             $phpDataObject = null;
             $statement = null;
 
-            session_start();
+            //Configure a new session
+            require_once "../includes/sessionConfig.php";
             //Create the variables for the new session and go to the contacts page
             $_SESSION["userName"] = $userName;
             $_SESSION["userPassword"] = $userPassword;
@@ -135,21 +136,25 @@ class User
     {
         try {
             require_once "../includes/dataBaseConection.php";
-            $sql = "SELECT username,userpassword FROM users WHERE username=? AND userpassword=?";
+
+            $sql = "SELECT id,username,userpassword FROM users WHERE username=? AND userpassword=?";
             $statement = $phpDataObject->prepare($sql);
             $userName = $user->getName();
             $userPassword = $user->getPassword();
             $statement->execute([$userName, $userPassword]);
+            $result=$statement->fetch(PDO::FETCH_ASSOC);
             $numRows = $statement->rowCount();
-           
-            session_start();
-            //Verify if the query returned a array ou nothing
+
+            //Configure a new session
+            require_once "../includes/sessionConfig.php";
+
+            //Verify if the query returned a result or nothing
             if ($numRows > 0) {
-                //User exist on database
                 //Create the variables for the new session
-                $_SESSION["userName"] = $userName;
-                $_SESSION["userPassword"] = $userPassword;
-                header("Location: ../views/contacts.php");
+                $_SESSION["userId"]=$result["id"];
+                $_SESSION["userName"] = $result["username"];
+               // $_SESSION["userPassword"] =$result["userpassword"];
+                header("Location: ../views/main.php");
 
             } else {
                 //User doesn't exist on database
