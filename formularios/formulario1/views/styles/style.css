@@ -1,25 +1,37 @@
 @charset "UTF-8";
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Noto+Serif+Khitan+Small+Script&display=swap");
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-Black.ttf"),
+    url("../fonts/Roboto/Roboto-Bold.ttf"),
+    url("../fonts/Roboto/Roboto-Medium.ttf"),
+    url("../fonts/Roboto/Roboto-Regular.ttf");
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+  font-family: "Popins";
+  src: url("../fonts/Poppins/Poppins-Black.ttf"),
+    url("../fonts/Poppins/Poppins-Bold.ttf"),
+    url("../fonts/Poppins/Poppins-Medium.ttf"),
+    url("../fonts/Poppins/Poppins-Regular.ttf");
+}
 
 :root {
-  /*Cores
-  --cor-verde: #2afc98;*/
+  /*Colors
+  --colorGreen: #2afc98;*/
   --colorBlack: #000000;
   --colorWhite: #fff;
   --colorGray: #ebf2fa;
   --colorBlueDark: #0d1321;
-  --colorBlueLight:#05B2DC;
-  --colorBlueLight30:#50c9e7;
+  --colorBlueLight: #05b2dc;
+  --colorBlueLight30: #50c9e7;
   --colorOrange: #fcca46;
   --colorOrangeLight30: #fdda7e;
   --colorRed: #fe4a49;
   --colorRedLight20: #fe6e6d;
 
-  /*Fontes*/
-  --fontTitle: "Noto Serif Khitan Small Script", serif;
+  /*Fonts*/
+  --fontTitle: "Roboto", serif;
   --fontContent: "Poppins", serif;
 }
 
@@ -30,121 +42,145 @@
 
 body {
   /*Box model*/
-  padding:20px;
-  background: var(--colorGray);
+  background: var(--colorBlueDark);
   height: 100%;
 
   /*Typograph*/
   font-family: var(--fontContent);
-
+  font-size: 16px;
+}
+/*Flexbox*/
+#main,
+.flexRow,
+.flexColumn {
+  display: flex;
+}
+.flexRow {
+  flex-direction: row;
+  gap: 20px;
 }
 
-#box_tela_login {
-  width: 80%;
-  padding: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 15px;
-  background-color: var(--colorBlueDark);
-  color: var(--corWhite);
+.flexColumn {
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*Header*/
+#header {
+  /*Box model*/
+  padding: 0px 20px;
+  padding-top: 20px;
+}
+
+#navbar {
+  /*Box model*/
+  width: 100%;
   max-width: 400px;
+
+  /*Display stuff*/
+  justify-content: space-between;
 }
 
-.title {
-  margin-bottom: 30px;
-  color:var(--colorWhite);
-  text-transform: uppercase;
-  font-weight: 500;
-  text-align: center;
+.image {
+  width: 100%;
 }
 
-.div_input {
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-  margin-bottom: 15px;
+#logo {
+  width: 40px;
+  height: 33px;
 }
 
-.label,.paragraph {
-  margin-bottom: 10px;
-  font-size: 24px;
-  color:var(--colorWhite);
-}
-
-.paragraph {
-  font-size: 14px;
-  font-family:var(--fontContent);
-
-}
-
-
-.input {
-  width: 90%;
-  padding: 10px;
-  font-size: 18px;
-  outline: none;
-}
-
-#div_senha {
-  position: relative;
-}
-
-#icone_olho {
-  font-size: 20px;
-  position: absolute;
-  top: 60%;
-  left: 87%;
-  color: var(--colorBlack);
-  cursor: pointer;
-}
-
-#div_output {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.link{
-color:var(--colorBlueLight);
-text-decoration:none;
-}
-
-.link:hover{
-  text-decoration:underline;
-}
-
-
-.output {
-  width: 40%;
-  padding: 15px;
+.button {
+  /*Box model*/
+  width: 72px;
+  height: 40px;
   border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  border-radius: 8px;
+
+  /*Typograph*/
+  font-family: var(--fontTitle);
+  text-align: center;
+  font-weight: 600;
 }
 
-.output:hover {
+.button:hover {
   cursor: pointer;
 }
 
-#buttonSend {
+#buttonLogin {
   background-color: var(--colorOrange);
-  color: var(--colorBlack);
 }
 
-#buttonSend:hover {
+#buttonLogin:hover {
   background-color: var(--colorOrangeLight30);
 }
 
-#buttonReset {
-  background-color: var(--colorRed);
+#buttonSignup {
+  background-color: var(--colorBlueLight);
+}
+
+#buttonSignup:hover {
+  background-color: var(--colorBlueLight30);
+}
+/*End of the header*/
+
+/*Main*/
+#main {
+  /*Box model*/
+  margin-top: 60px;
+  padding: 20px;
+
+  /*Display stuff*/
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sessionText {
+  gap: 10px;
+}
+
+.title {
+  font-family: var(--fontTitle);
+  font-size: 18px;
   color: var(--colorWhite);
 }
 
-#buttonReset:hover {
-  background-color: var(--colorRedLight20);
+.paragraph {
+  /*Box model*/
+  max-width: 600px;
+
+  /*Typograph*/
+  font-size: 16px;
+  font-family: var(--fontContent);
+  color: var(--colorWhite);
+}
+
+/*Session images*/
+.pictureWoman {
+  max-width: 280px;
+  max-height: 240px;
+}
+
+/*Sesion benefits*/
+#list {
+  gap: 10px;
+}
+
+/*Footer*/
+#footer {
+  /*Box model*/
+  margin-top: 60px;
+  padding: 20px;
+  border-top: 2px solid var(--colorBlueLight);
+
+  /*Display stuff*/
+  align-items: center;
+}
+
+#paragraphFooter {
+  /*Display stuff*/
+  margin: 0px auto;
+
+  /*Typograph*/
+  font-size: 12px;
 }

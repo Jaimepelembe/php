@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+@import url("style.css");
+
+/*******Header*******/
+#header {
+  /*Box model*/
+  padding: 0px 40px;
+  padding-top: 40px;
+
+  /*Display stuff*/
+  justify-content: space-between;
+}
+
+#navbar{
+max-width:600px;
+
+}
+
+.image {
+  width: 100%;
+}
+
+#logo {
+  width: 64px;
+  height: 53px;
+}
+
+#containerButtons {
+  gap: 40px;
+}
+
+.button {
+  /*Box model*/
+  width: 108px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+
+  /*Typograph*/
+  font-family: var(--fontTitle);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+/*******Main*******/
+#main {
+  /*Display stuff*/
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.paragraph {
+  font-size: 18px;
+}
+
+#containerImages {
+  flex-direction: row;
+}
+
+#paragraphFooter {
+  font-size: 14px;
+}
