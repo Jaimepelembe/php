@@ -30,7 +30,7 @@
 
     <main id="main">
         <section class="sessionText flexColumn">
-            <h1 class="title">Cadastre todos os seus contactos</h1>
+            <h1 class="title">Contactos Online</h1>
             <p class="paragraph">O nosso sistema permite que você crie, salve e elimine todos os seus contactos de forma
                 rápida, facíl e segura.</p>
 

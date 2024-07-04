@@ -16,32 +16,32 @@
 </head>
 
 <body>
-    <form id="formSignup" class="flexColumn" action="../includes/loginHandler.php" method="post">
-  
-      <h2 class="title">Login</h2>
-    
-      <div  class="containerInput">
-        <label for="userName" class="label">Nome</label>
-        <input type="text" name="userName" id="userName" class="input" required/>
-      </div>
+  <form id="formSignup" class="flexColumn" action="../includes/loginHandler.php" method="post">
 
-      <div  class="containerInput">
-        <label for="userPassword" class="label">Senha</label>
-        <input type="password" name="userPassword" id="userPassword" class="input" required />
-        <i id="icone_olho" class="bi bi-eye-fill" onclick="mostrarSenha()"></i>
-      </div>
+    <h1 class="title">Login</h1>
 
-      <div class="containerInput">
-      <p class="paragraph">Ainda não tem uma conta? <a href="signup.php" class="link">Inscreva-se</a></p>
-      </div>
+    <div class="containerInput">
+      <label for="userName" class="label">Nome</label>
+      <input type="text" name="userName" id="userName" class="input" required />
+    </div>
 
-      <!--Output section-->
-      <div id="containerOutput">
-        <input type="submit" value="Login" id="buttonLogin" class="output" onclick="limparCampos()" />
+    <div class="containerInput">
+      <label for="userPassword" class="label">Senha</label>
+      <input type="password" name="userPassword" id="userPassword" class="input" required />
+      <i id="icone_olho" class="bi bi-eye-fill" onclick="mostrarSenha()"></i>
+    </div>
 
-        <input type="reset" value="Limpar" id="buttonReset" class="output" onclick="limparCampos()" />
-      </div>
-    </form>
+    <div class="containerInput">
+      <p class="smallText">Ainda não tem uma conta? <a href="signup.php" class="link">Inscreva-se</a></p>
+    </div>
+
+    <!--Output section-->
+    <div id="containerOutput" class="flexRow">
+      <input type="submit" value="Login" id="buttonLogin" class="button buttonOrange" onclick="limparCampos()" />
+
+      <input type="reset" value="Limpar" id="buttonReset" class="button buttonRed" onclick="limparCampos()" />
+    </div>
+  </form>
 </body>
 
 </html>

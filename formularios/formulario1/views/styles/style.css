@@ -49,6 +49,8 @@ body {
   font-family: var(--fontContent);
   font-size: 16px;
 }
+
+
 /*Flexbox*/
 #main,
 .flexRow,
@@ -107,24 +109,33 @@ body {
   cursor: pointer;
 }
 
-#buttonLogin {
+#buttonLogin,.buttonOrange {
   background-color: var(--colorOrange);
 }
 
-#buttonLogin:hover {
+#buttonLogin,.buttonOrange:hover {
   background-color: var(--colorOrangeLight30);
 }
 
-#buttonSignup {
+#buttonSignup,.buttonBlue {
   background-color: var(--colorBlueLight);
 }
 
-#buttonSignup:hover {
+#buttonSignup,.buttonBlue:hover {
   background-color: var(--colorBlueLight30);
 }
+
+.buttonRed {
+  background-color: var(--colorRed);
+}
+
+.buttonRed:hover {
+  background-color: var(--colorRedLight20);
+}
+
 /*End of the header*/
 
-/*Main*/
+/*****Main*****/
 #main {
   /*Box model*/
   margin-top: 60px;
@@ -139,12 +150,6 @@ body {
   gap: 10px;
 }
 
-.title {
-  font-family: var(--fontTitle);
-  font-size: 18px;
-  color: var(--colorWhite);
-}
-
 .paragraph {
   /*Box model*/
   max-width: 600px;
@@ -155,7 +160,34 @@ body {
   color: var(--colorWhite);
 }
 
+/*Text headers*/
+.title {
+  font-family: var(--fontTitle);
+  color: var(--colorWhite);
+}
+
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 18px;
+}
+
+/*Small texts*/
+.smallText {
+  font-size: 14px;
+  color: var(--colorWhite);
+}
+
+
 /*Session images*/
+
+@media screen and (min-width: 600px) {
+  #containerImages {
+    flex-direction: row;
+  }
+}
+
 .pictureWoman {
   max-width: 280px;
   max-height: 240px;
@@ -177,10 +209,8 @@ body {
   align-items: center;
 }
 
-#paragraphFooter {
-  /*Display stuff*/
-  margin: 0px auto;
-
+.paragraphFooter {
   /*Typograph*/
-  font-size: 12px;
+  width: 100%;
+  text-align: center;
 }

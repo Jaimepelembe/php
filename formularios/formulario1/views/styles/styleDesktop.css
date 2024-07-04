@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 @import url("style.css");
 
 /*******Header*******/
@@ -12,9 +10,8 @@
   justify-content: space-between;
 }
 
-#navbar{
-max-width:600px;
-
+#navbar {
+  max-width: 600px;
 }
 
 .image {
@@ -50,16 +47,21 @@ max-width:600px;
   align-items: center;
 }
 
-.title {
-  font-size: 24px;
-}
-
 .paragraph {
   font-size: 18px;
 }
 
-#containerImages {
-  flex-direction: row;
+/*Text headers*/
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+}
+
+/*Small texts*/
+.smallText {
+  font-size: 16px;
 }
 
 #paragraphFooter {
