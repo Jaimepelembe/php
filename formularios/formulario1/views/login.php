@@ -37,7 +37,7 @@
 
     <!--Output section-->
     <div id="containerOutput" class="flexRow">
-      <input type="submit" value="Login" id="buttonLogin" class="button buttonOrange" onclick="limparCampos()" />
+      <input type="submit" value="Login" id="buttonLogin" class="button buttonOrange"/>
 
       <input type="reset" value="Limpar" id="buttonReset" class="button buttonRed" onclick="limparCampos()" />
     </div>

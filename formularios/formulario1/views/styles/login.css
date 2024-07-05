@@ -16,15 +16,15 @@ body {
 #formSignup {
   /*Box model*/
   width: 80%;
+  max-width: 300px;
   padding: 30px;
-  max-width: 360px;
-  border-radius: 16px;
-  background-color: var(--colorBlueDark);
-  color: var(--corWhite);
   margin: 0px auto;
   margin-top: 10%;
+  border-radius: 16px;
+  background-color: var(--colorBlueDark);
 
   /*Display stuff*/
+  align-items: center;
   gap: 20px;
 }
 
@@ -34,7 +34,13 @@ body {
 }
 
 .containerInput {
+  /*Box model*/
+  max-width: 300px;
+
+  /*Position*/
   position: relative;
+
+  /*Display stuff*/
   flex-direction: column;
   gap: 10px;
 }
@@ -48,6 +54,7 @@ body {
 .input {
   /*Box model*/
   width: 90%;
+  max-width: 280px;
   padding: 10px;
   border: none;
   border-radius: 4px;
@@ -79,10 +86,11 @@ body {
 
 #containerOutput {
   justify-content: space-between;
+  max-width: 336px;
+  gap: 40px;
 }
 
 .button {
   width: 104px;
   height: 40px;
 }
-

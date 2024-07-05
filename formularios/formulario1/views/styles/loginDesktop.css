@@ -1,1 +1,57 @@
 @import url("login.css");
+
+#formSignup {
+  /*Box model*/
+  max-width: 400px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.containerInput {
+  max-width: 340px;
+}
+
+.label {
+  /*Typograph*/
+  font-size: 20px;
+}
+
+.input {
+  /*Box model*/
+  width: 320px;
+  max-height: 40px;
+
+  /*Typograph*/
+  font-size: 18px;
+}
+
+#icone_olho {
+  /*Position*/
+  position: absolute;
+  bottom: 9%;
+  right: 7%;
+
+  /*Typograph*/
+  font-size: 20px;
+  color: var(--colorBlack);
+}
+
+.smallText {
+  font-size: 16px;
+}
+
+.button {
+  /*Box model*/
+  width: 120px;
+  height: 48px;
+
+  /*Typograph*/
+  font-size: 16px;
+
+}
+
+#containerOutput {
+  gap: 80px;
+}
