@@ -5,13 +5,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto online</title>
+  <link rel="stylesheet" href="styles/modal.css" media="all" />
   <link rel="stylesheet" href="styles/login.css" media="all" />
   <link rel="stylesheet" href="styles/loginDesktop.css" media="screen and (min-width: 768px)" />
+
   <!--link dos icones-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
   <!--Javascript-->
   <script src="javascript/tela_login.js"></script>
+  <script src="javascript/validation.js"></script>
 
 </head>
 
@@ -21,13 +24,13 @@
     <h1 class="title">Login</h1>
 
     <div class="containerInput">
-      <label for="userName" class="label">Nome</label>
-      <input type="text" name="userName" id="userName" class="input" required />
+      <label for="nome" class="label">Nome</label>
+      <input type="text" name="nome" id="userName" class="input" required/>
     </div>
 
     <div class="containerInput">
-      <label for="userPassword" class="label">Senha</label>
-      <input type="password" name="userPassword" id="userPassword" class="input" required />
+      <label for="senha" class="label">Senha</label>
+      <input type="password" name="senha" id="userPassword" class="input" required />
       <i id="icone_olho" class="bi bi-eye-fill" onclick="mostrarSenha()"></i>
     </div>
 
@@ -37,11 +40,14 @@
 
     <!--Output section-->
     <div id="containerOutput" class="flexRow">
-      <input type="submit" value="Login" id="buttonLogin" class="button buttonOrange"/>
+      <input type="submit" value="Login" id="buttonLogin" class="button buttonOrange"  />
 
-      <input type="reset" value="Limpar" id="buttonReset" class="button buttonRed" onclick="limparCampos()" />
+      <input type="reset" value="Limpar" id="buttonReset" class="button buttonRed" onclick="validateTextField('userName')" />
     </div>
   </form>
+
+<?php include("modal.php");?>
+
 </body>
 
 </html>

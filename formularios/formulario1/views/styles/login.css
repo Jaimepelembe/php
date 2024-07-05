@@ -8,6 +8,10 @@ body {
   font-family: var(--fontContent);
 }
 
+.displayFlex{
+  display:flex;
+}
+
 #formSignup,
 .containerInput {
   display: flex;
@@ -94,3 +98,4 @@ body {
   width: 104px;
   height: 40px;
 }
+
