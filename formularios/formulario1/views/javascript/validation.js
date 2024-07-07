@@ -7,7 +7,15 @@ function validateTextField(id) {
   }
 }
 
-function validateName(name) {}
+function validateTextFieldSize(id, minimo, maximo) {
+  var value = document.getElementById(id).value;
+  if (!validaCampoTexto(id)) {
+  return false;
+  }
+  if ( (valor.length < minimo) || (valor.length > maximo)) {
+  return false;
+  }
+}
 
 /**
  * Shows a error in a modal

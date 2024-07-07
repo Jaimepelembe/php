@@ -25,12 +25,12 @@
 
     <div class="containerInput">
       <label for="nome" class="label">Nome</label>
-      <input type="text" name="nome" id="userName" class="input" required/>
+      <input type="text" name="nome" id="userName" class="input"/>
     </div>
 
     <div class="containerInput">
       <label for="senha" class="label">Senha</label>
-      <input type="password" name="senha" id="userPassword" class="input" required />
+      <input type="password" name="senha" id="userPassword" class="input" />
       <i id="icone_olho" class="bi bi-eye-fill" onclick="mostrarSenha()"></i>
     </div>
 
