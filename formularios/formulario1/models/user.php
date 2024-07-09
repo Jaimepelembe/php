@@ -55,18 +55,16 @@ class User
             // $statement->execute([$userName, $hashedPassword]);//Secure password
             $statement->execute([$userName, $userPassword]);//Lerning step
 
-
-
             //Finalizate the exectution
             $phpDataObject = null;
             $statement = null;
 
             //Configure a new session
             require_once "../includes/sessionConfig.php";
-            //Create the variables for the new session and go to the contacts page
+            //Create the variables for the new session and go to the main page
             $_SESSION["userName"] = $userName;
             $_SESSION["userPassword"] = $userPassword;
-            header("Location: ../views/contacts.php");
+            header("Location: ../views/main.php");
             die();
 
         } catch (PDOException $exception) {

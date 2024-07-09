@@ -34,7 +34,7 @@ class userController extends User
 
     public function verifyUser($userName,$userPassword){
         require_once "../includes/validation.php";
-        if (validateUserName(($userName) && validatePassword($userPassword, 4, 255))) {
+        if (validateUserName(($userName) && validatePassword($userPassword, 3, 255))) {
 
             try {
                 //Create the object user

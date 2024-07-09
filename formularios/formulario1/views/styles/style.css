@@ -23,6 +23,7 @@
   --colorWhite: #fff;
   --colorGray: #ebf2fa;
   --colorBlueDark: #0d1321;
+  --colorBlueDark7: #0a0f1a;
   --colorBlueLight: #05b2dc;
   --colorBlueLight30: #50c9e7;
   --colorOrange: #fcca46;
@@ -100,7 +101,7 @@ body {
   /*Typograph*/
   font-family: var(--fontContent);
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .button:hover {
@@ -183,8 +184,10 @@ h2 {
 }
 
 .link {
+  font-size:16px;
   color: var(--colorBlueLight);
   text-decoration: none;
+
 }
 
 .link:hover {
@@ -193,6 +196,8 @@ h2 {
 }
 
 /*Session images*/
+
+
 
 @media screen and (min-width: 600px) {
   #containerImages {
@@ -225,4 +230,81 @@ h2 {
   /*Typograph*/
   width: 100%;
   text-align: center;
+}
+
+
+
+/******Style for desktop******/
+@media screen and (min-width: 768px) {
+
+/*******Header*******/
+#header {
+  /*Box model*/
+  padding: 0px 40px;
+  padding-top: 40px;
+
+  /*Display stuff*/
+  justify-content: space-between;
+}
+
+
+.image {
+  width: 100%;
+}
+
+#logo {
+  width: 64px;
+  height: 53px;
+}
+
+#containerButtons {
+  gap: 40px;
+}
+
+.button {
+  /*Box model*/
+  width: 108px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+
+  /*Typograph*/
+  font-family: var(--fontTitle);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+/*******Main*******/
+#main {
+  /*Display stuff*/
+  align-items: center;
+}
+
+.paragraph {
+  font-size: 18px;
+}
+
+/*Text headers*/
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+}
+
+/*Small texts*/
+.smallText {
+  font-size: 16px;
+}
+
+#paragraphFooter {
+  font-size: 14px;
+}
+
+
+.link {
+  font-size:18px;
+}
+
 }

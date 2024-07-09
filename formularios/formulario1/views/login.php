@@ -12,26 +12,24 @@
   <!--link dos icones-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
-  <!--Javascript-->
-  <script src="javascript/tela_login.js"></script>
-  <script src="javascript/validation.js"></script>
 
 </head>
 
 <body>
-  <form id="formSignup" class="flexColumn" action="../includes/loginHandler.php" method="post">
+  <form id="formSignup" class="flexColumn" onsubmit="return validateTheLogin()" action="../includes/loginHandler.php"
+    method="post">
 
     <h1 class="title">Login</h1>
 
     <div class="containerInput">
       <label for="nome" class="label">Nome</label>
-      <input type="text" name="nome" id="userName" class="input"/>
+      <input type="text" name="nome" id="userName" class="input" />
     </div>
 
     <div class="containerInput">
       <label for="senha" class="label">Senha</label>
       <input type="password" name="senha" id="userPassword" class="input" />
-      <i id="icone_olho" class="bi bi-eye-fill" onclick="mostrarSenha()"></i>
+      <i id="iconEye" class="bi bi-eye-fill svg" onclick="showPassword('userPassword')"></i>
     </div>
 
     <div class="containerInput">
@@ -40,14 +38,16 @@
 
     <!--Output section-->
     <div id="containerOutput" class="flexRow">
-      <input type="submit" value="Login" id="buttonLogin" class="button buttonOrange"  />
+      <input type="submit" value="Login" id="buttonLogin" class="button buttonOrange"></input>
+      <input value="Limpar" id="buttonClean" class="button buttonRed" onclick="cleanFields()"></input>
 
-      <input type="reset" value="Limpar" id="buttonReset" class="button buttonRed" onclick="validateTextField('userName')" />
     </div>
   </form>
 
-<?php include("modal.php");?>
+  <?php include ("modal.php"); ?>
 
 </body>
-
+  <!--Javascript-->
+  <script src="javascript/login.js"></script>
+  <script src="javascript/validation.js"></script>
 </html>
