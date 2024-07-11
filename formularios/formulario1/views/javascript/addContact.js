@@ -10,7 +10,6 @@ function validateAddition() {
   validatePhoneNumber("phoneNumber") &&
     validateEmail("email")
   ) {
-    alert("submeti")
     return true;
   } else {
     return false;
