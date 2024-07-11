@@ -40,7 +40,6 @@
     <div id="containerOutput" class="flexRow">
       <input type="submit" value="Login" id="buttonLogin" class="button buttonOrange"></input>
       <input value="Limpar" id="buttonClean" class="button buttonRed" onclick="cleanFields()"></input>
-
     </div>
   </form>
 

@@ -1,7 +1,7 @@
 <header id="header" class="flexColumn">
     <div id="containerNavigation" class="flexRow">
         <div id="containerLogo">
-           <a href="main.php"><img src="images/telephonered.png" alt="Logo" id="logo" class="image" /></a>
+            <a href="main.php"><img src="images/telephonered.png" alt="Logo" id="logo" class="image" /></a>
         </div>
         <button class="buttonHamburger" onclick="toggleSideBar()">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
@@ -20,15 +20,19 @@
                 </svg>
             </button>
 
-            <a href="#" class="link">Adicionar Contacto</a>
-            <a href="#" class="link">Visualizar contactos</a>
-            <a href="#" class="link">Dados pessoais</a>
+            <a href="addContact.php" class="link linkHeader">Adicionar Contacto</a>
+            <a href="#" class="link linkHeader">Visualizar contactos</a>
+            <a href="#" class="link linkHeader">Dados pessoais</a>
             <button id="buttonLogout" class="button buttonRed"
                 onclick="location.href='../includes/logout.php'">Logout</button>
         </nav>
 
     </div>
 
-    <div id="UserInformation"> <?php echo "<h1 class='theUserName title'>Bem vindo " . $_SESSION['userName'] . " </h1>"; ?></div>
+    <!--php-->
+    <?php include_once ("../includes/userInformationHandler.php"); ?>
+    
+    <div id="UserInformation">
+        <?php echo "<h1 class='theUserName title'>Bem vindo " . $_SESSION['userName'] . " </h1>"; ?></div>
 
 </header>

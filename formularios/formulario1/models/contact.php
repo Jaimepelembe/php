@@ -8,24 +8,25 @@ class Contact
     private $email;
     private $userId;
 
-    public function __construct($phoneNumber, $email, $userId)
+    public function __construct($contactName, $phoneNumber, $email)
     {
+        $this->contactName = $contactName;
         $this->phoneNumber = $phoneNumber;
         $this->email = $email;
-        $this->userId = $userId;
+
     }
 
 
     /**
-     * Save the new user on the database
-     * @param $user The new user created
+     * Save the new Contact on the database
+     * @param $contact The new contact created
      */
     protected function saveContact(Contact $contact)
     {
 
         try {
 
-            //Insert the username and password on user table
+            //Insert the new contact on the table contact  
             require_once "../includes/dataBaseConection.php";
             $query = "INSERT INTO contact (contact_name,phone_number,email,user_id) VALUES(?,?,?,?)";
             $statement = $phpDataObject->prepare($query);
@@ -33,7 +34,7 @@ class Contact
             $phoneNumber = $contact->getPhoneNumber();
             $email = $contact->getEmail();
             $userId = $contact->getUserId();
-            $statement->execute([$contactName, $phoneNumber,$email,$userId ]);//Lerning step
+            $statement->execute([$contactName, $phoneNumber, $email, $userId]);//Lerning step
             // $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
             // $statement->execute([$userName, $hashedPassword]);//Secure password
 
@@ -42,7 +43,9 @@ class Contact
             //Finalizate the exectution
             $phpDataObject = null;
             $statement = null;
-            //header("Location: ../views/contacts.php");
+            $_SESSION["status"]="Contacto adicionado com sucesso";
+            $_SESSION["class"]="sucess";
+            header("Location: ../views/addContact.php");
             die();
 
         } catch (PDOException $exception) {
@@ -97,6 +100,12 @@ class Contact
     public function getUserId()
     {
         return $this->userId;
+    }
+
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+
     }
 
 }

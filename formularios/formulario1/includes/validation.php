@@ -30,47 +30,104 @@ function validateTheContent($input)
 
 
 /**
- * Validate a password
- * @return boolean true if the password is valid and false otherwise 
- * @param string $password The password
- * @param int $minLength The minimum length of the password
- * @param int $maxLength The maximum length of the password
+ * Validate the size of a text in a textField or textArea
+ * @param string  $fieldName The name of the textField or textArea
+ * @param string $text The text of the element
+ * @param int $minimum The minimum lenght of the text
+ * @param int $maximum The maximum lenght of the text
+ * @return boolean True if the size is valid or False otherwise
+ */
 
- **/
-function validatePassword($password, $minLength, $maxLength)
+
+
+function validateTextFieldSize($fieldName, $text, $minimum, $maximum)
 {
-    if (validateTheContent($password) && strlen($password) > $minLength && strlen($password) < $maxLength) {
-        return true;
+    if (!validateTheContent($text)) {
+        $message = "O campo " .
+            $fieldName . " não pode estar vázio";
+
+        setMessageOnSession($message, "failure");
+        return false;
+    }
+    if (strlen($text) < $minimum) {
+        $message = "O campo " .
+            $fieldName . " deve ter no mínimo " . $minimum . " caracteres.";
+
+        setMessageOnSession($message, "failure");
+        return false;
+
+
 
     }
-    return false;
+
+    if (strlen($text) > $maximum) {
+        $message = "O campo " .
+            $fieldName . " deve ter no máximo " . $maximum . " caracteres.";
+
+        setMessageOnSession($message, "failure");
+        return false;
+    }
+
+    return true;
+
 }
 
 /**
- * Validate the email typed by the user
- * @param $email The email inserted by the user
- * @return boolean true if the email is valid or false otherwise
- * 
+ * Create variables in the current session to be displayed after
+ * @param string  $message The message to be displayed to the user
+ * @param string $class The of the error
+ */
+
+function setMessageOnSession($message, $class)
+{
+    $_SESSION["status"] = $message;
+    $_SESSION["class"] = $class;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Verify if a phone number is valid using the format 8[2-7]XXXXXXX
+ * @param $phoneNumber The phone number
+ *@returns True if the number is valid and False otherwise*/
+
+
+function validatePhoneNumber($phoneNumber)
+{
+    if (isEmpty($phoneNumber . "")) {
+        return false;
+    } else {
+        $regularExpression = '/^8[2-7]\d{7}$/';
+        return preg_match($regularExpression, $phoneNumber . "");
+    }
+}
+
+
+
+/**
+ * Verify if the email is valid using the format
+ * @param $email The email
+ *@returns True if the email is valid and False otherwise
+ *
  */
 function validateEmail($email)
 {
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+    if (isEmpty($email . "")) {
         return false;
+    } else {
+        $regularExpression = '/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})$/';
+        return preg_match($regularExpression, $email . "");
     }
-    return true;
 }
-
-/**
- * Validate the name of the user
- * @param $username The name of the user
- * @return boolean True if the name is valid or false otherwise
- */
-function validateUserName($userName){
-    if(!preg_match("/^[a-zA-Z0-9]*$/",$userName)){
-        return false;
-        
-    }
-    return true;
-}
-
-

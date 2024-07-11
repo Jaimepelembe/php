@@ -1,7 +1,7 @@
 function validateTextField(id) {
   var textField = document.getElementById(id);
   const value = textField.value;
-  if (value == null || value == "" || /^\s+$/.test(value)) {
+  if (value == null || value == "" ) {
     const message =
       "Por favor, preencha o campo " + textField.getAttribute("name");
     showError(message);
@@ -133,13 +133,66 @@ function validateRadioButtonFields(id) {
 }
 
 /**
+ * Verify if a phone number is valid using the format 8[2-7]XXXXXXX
+ * @param id The id of the textField
+ *@returns True if the number is valid and False otherwise
+ *
+ */
+function validatePhoneNumber(id) {
+  var textField = document.getElementById(id);
+  var phoneNumber = textField.value;
+  if (!validateTextField(id)) {
+    return false;
+  } else {
+    var regularExpression = /^8[2-7]\d{7}$/;
+    if (regularExpression.test(phoneNumber)) {
+      return true;
+    } else {
+      const message =
+        "O formato do número está incorreto. <br> <br> Deve ser 8[2-7]XXXXXXX ";
+      showError(message);
+      textField.focus();
+
+      return false;
+    }
+  }
+}
+
+/**
+ * Verify if the email is valid using the format
+ * @param id The id of the textField
+ *@returns True if the email is valid and False otherwise
+ *
+ */
+function validateEmail(id) {
+  var textField = document.getElementById(id);
+  var email = textField.value;
+  var regularExpression =
+    /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})$/;
+
+  if (!validateTextField(id)) {
+    return false;
+  } else {
+    if (regularExpression.test(email)) {
+      return true;
+    } else {
+      const message =
+        "O formato do email está incorreto. <br> <br> Deve ser exemplo@dominio.com";
+      showError(message);
+      textField.focus();
+      return false;
+    }
+  }
+}
+
+/**
  * Shows a error in a modal
  * @param message The message showed in the modal
  *
  */
 function showError(message) {
   const messageAlert = document.getElementById("messageAlert");
-  messageAlert.innerText = message;
+  messageAlert.innerHTML = message;
 
   const modal = document.getElementById("modal");
   modal.showModal();
@@ -149,4 +202,27 @@ function showError(message) {
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
   modal.close();
+}
+
+
+/****The alert****/
+
+/**
+ * Hidden a element setting his display to none
+ * @param id The id of the element
+ */
+function hiddenElement(id) {
+  var element = document.getElementById(id);
+  element.style.display = "none";
+}
+
+/**
+ * Removes a element from the html body
+ * @param {*} id The id of the element
+ */
+function removeElement(id) {
+  var element = document.getElementById(id);
+  if(element!=null){
+    element.remove(element);
+  }
 }

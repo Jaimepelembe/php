@@ -1,0 +1,38 @@
+@import url("style.css");
+
+#alert {
+  /*Box model*/
+  max-width: 280px;
+  padding: 10px;
+  margin: 0 auto;
+  z-index: 10;
+  border-radius: 8px;
+  /*Display stuff.
+  */
+  justify-content: space-between;
+}
+
+.sucess {
+  background-color: var(--colorBlueLight);
+}
+
+.failure {
+  background-color: var(--colorRed);
+}
+
+#buttonCloseAlert {
+  background-color: transparent;
+  color: var(--colorWhite);
+}
+
+#buttonCloseAlert:hover {
+  color: var(--colorBlack);
+}
+
+@media screen and (min-width: 768px) {
+  #alert {
+    /*Box model*/
+    max-width: 320px;
+    padding: 20px;
+  }
+}
