@@ -42,7 +42,7 @@
         <!--Output section-->
         <div id="containerOutput" class="flexRow">
             <input type="submit" id="buttonSave" class="button buttonOrange" value="Salvar"></input>
-            <input id="buttonClean" class="button buttonRed" value="Limpar" onclick="cleanAdditionFields()"></input>
+            <input id="buttonClean" class="button buttonRed" value="Limpar" onclick="cleanFieldsByClassName('input')"></input>
         </div>
 
     </form>

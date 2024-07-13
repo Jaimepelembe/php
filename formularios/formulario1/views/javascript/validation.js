@@ -198,6 +198,44 @@ function showError(message) {
   modal.showModal();
 }
 
+/**
+ * Clean the content of a textField or textArea
+ * @param id The id of the element
+ */
+function cleanTextField(id) {
+  var textField = document.getElementById(id);
+  textField.value = "";
+}
+
+/**
+ * Clean the content of textFields or textAreas of the same class
+ * @param {*} className The name of the class
+ */
+function cleanFieldsByClassName(className) {
+  var listFields = document.getElementsByClassName(className);
+  if (listFields != null) {
+    for (i = 0; i < listFields.length; i++) {
+      listFields[i].value = "";
+    }
+  }
+}
+
+/**
+ * Shows or hidden the password of a password field
+ * @param id The id of the element
+ */
+function showPassword(id) {
+  var userPassword = document.getElementById(id);
+  var iconEye = document.getElementById("iconEye");
+  if (userPassword.type === "password") {
+    userPassword.setAttribute("type", "text");
+    iconEye.classList.replace("bi-eye-fill", "bi-eye-slash-fill");
+  } else {
+    userPassword.setAttribute("type", "password");
+    iconEye.classList.replace("bi-eye-slash-fill", "bi-eye-fill");
+  }
+}
+
 /*Close modal */
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
@@ -232,8 +270,9 @@ function removeElement(id) {
  * @param {*} interval The interval in milliseconds
  */
 function removeElementInInterval(id, interval) {
-    setTimeout(function(){removeElement(id)}, interval);
+  setTimeout(function () {
+    removeElement(id);
+  }, interval);
 }
 
-
-removeElementInInterval("alert",4000);//Removes the alert in a interval of 4 seconds
+removeElementInInterval("alert", 4000); //Removes the alert in a interval of 4 seconds

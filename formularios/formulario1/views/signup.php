@@ -38,7 +38,7 @@
       <!--Output section-->
       <div id="containerOutput" class="flexRow">
         <input type="submit" value="Signup" id="buttonSend" class="button buttonOrange"/>
-        <input value="Limpar" id="buttonReset" class="button buttonRed" onclick="cleanFields()" />
+        <input value="Limpar" id="buttonReset" class="button buttonRed" onclick="cleanFieldsByClassName('input')" />
       </div>
     </form>
     <?php include ("modal.php"); ?>

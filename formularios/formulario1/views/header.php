@@ -22,7 +22,7 @@
 
             <a href="addContact.php" class="link linkHeader">Adicionar Contacto</a>
             <a href="#" class="link linkHeader">Visualizar contactos</a>
-            <a href="#" class="link linkHeader">Dados pessoais</a>
+            <a href="personalData.php" class="link linkHeader">Dados pessoais</a>
             <button id="buttonLogout" class="button buttonRed"
                 onclick="location.href='../includes/logout.php'">Logout</button>
         </nav>

@@ -31,6 +31,7 @@ body {
   align-items: center;
   gap: 20px;
 }
+#formSignup{margin-top:5%;}
 
 .title {
   text-align: center;
@@ -130,11 +131,11 @@ body {
   font-size: 18px;
 }
 
-#icone_olho {
+#iconEye {
   /*Position*/
   position: absolute;
-  bottom: 9%;
-  right: 7%;
+  bottom: 0%;
+  right: 2%;
 
   /*Typograph*/
   font-size: 20px;

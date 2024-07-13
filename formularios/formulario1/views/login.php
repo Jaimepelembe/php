@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
   <?php include ("../includes/alert.php") ?>
 
   <form id="formSignup" class="flexColumn" onsubmit="return validateTheLogin()" action="../includes/loginHandler.php"
@@ -42,7 +43,7 @@
     <!--Output section-->
     <div id="containerOutput" class="flexRow">
       <input type="submit" value="Login" id="buttonLogin" class="button buttonOrange"></input>
-      <input value="Limpar" id="buttonClean" class="button buttonRed" onclick="cleanFields()"></input>
+      <input value="Limpar" id="buttonClean" class="button buttonRed" onclick="cleanFieldsByClassName('input')"></input>
     </div>
   </form>
 
