@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/login.css" media="all">
     <link rel="stylesheet" href="styles/header.css" media="all">
     <link rel="stylesheet" href="styles/addContact.css" media="all">
+    <link rel="stylesheet" href="styles/personalData.css" media="all">
 
 </head>
 
@@ -42,7 +43,7 @@
     </form>
 
     <!--**********Form to update the password**********-->
-    <form id="formSignup" class="flexColumn" onsubmit="return validateTheLogin()" action="../includes/signupHandler.php"
+    <form id="formSignup" class="form flexColumn" onsubmit="return validateTheLogin()" action="../includes/signupHandler.php"
         method="post">
 
         <h1 class="title">Alterar senha</h1>
