@@ -140,7 +140,7 @@ class User
             $userName = $user->getName();
             $userPassword = $user->getPassword();
             $statement->execute([$userName, $userPassword]);
-            $result=$statement->fetch(PDO::FETCH_ASSOC);
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
             $numRows = $statement->rowCount();
 
             //Configure a new session
@@ -149,13 +149,16 @@ class User
             //Verify if the query returned a result or nothing
             if ($numRows > 0) {
                 //Create the variables for the new session
-                $_SESSION["userId"]=$result["id"];
+                $_SESSION["userId"] = $result["id"];
                 $_SESSION["userName"] = $result["username"];
-               // $_SESSION["userPassword"] =$result["userpassword"];
+                // $_SESSION["userPassword"] =$result["userpassword"];
                 header("Location: ../views/main.php");
 
             } else {
                 //User doesn't exist on database
+                $_SESSION["status"] = "O nome ou a senha estão incorrectos";
+                $_SESSION["class"] = "failure";
+
                 //Destroy the variables of the session
                 unset($SESSION["userName"]);
                 unset($SESSION["userPassword"]);

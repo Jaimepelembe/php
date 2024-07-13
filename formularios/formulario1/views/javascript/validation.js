@@ -234,3 +234,6 @@ function removeElement(id) {
 function removeElementInInterval(id, interval) {
     setTimeout(function(){removeElement(id)}, interval);
 }
+
+
+removeElementInInterval("alert",4000);//Removes the alert in a interval of 4 seconds

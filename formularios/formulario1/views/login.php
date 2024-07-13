@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contacto online</title>
   <link rel="stylesheet" href="styles/modal.css" media="all" />
+  <link rel="stylesheet" href="styles/alert.css" media="all">
   <link rel="stylesheet" href="styles/login.css" media="all" />
   <link rel="stylesheet" href="styles/loginDesktop.css" media="screen and (min-width: 768px)" />
 
@@ -16,6 +17,8 @@
 </head>
 
 <body>
+  <?php include ("../includes/alert.php") ?>
+
   <form id="formSignup" class="flexColumn" onsubmit="return validateTheLogin()" action="../includes/loginHandler.php"
     method="post">
 
@@ -46,7 +49,8 @@
   <?php include ("modal.php"); ?>
 
 </body>
-  <!--Javascript-->
-  <script src="javascript/login.js"></script>
-  <script src="javascript/validation.js"></script>
+<!--Javascript-->
+<script src="javascript/login.js"></script>
+<script src="javascript/validation.js"></script>
+
 </html>

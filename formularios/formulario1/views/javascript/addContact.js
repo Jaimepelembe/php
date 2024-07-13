@@ -16,4 +16,3 @@ function validateAddition() {
   }
 }
 
-removeElementInInterval("alert",4000);//Removes the alert in a interval of 4 seconds
