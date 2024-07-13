@@ -1,7 +1,7 @@
 function validateTextField(id) {
   var textField = document.getElementById(id);
   const value = textField.value;
-  if (value == null || value == "" ) {
+  if (value == null || value == "") {
     const message =
       "Por favor, preencha o campo " + textField.getAttribute("name");
     showError(message);
@@ -204,7 +204,6 @@ function closeModal(modalId) {
   modal.close();
 }
 
-
 /****The alert****/
 
 /**
@@ -222,7 +221,16 @@ function hiddenElement(id) {
  */
 function removeElement(id) {
   var element = document.getElementById(id);
-  if(element!=null){
+  if (element != null) {
     element.remove(element);
   }
+}
+
+/**
+ * Removes a element in a interval
+ * @param {*} id The id of the element
+ * @param {*} interval The interval in milliseconds
+ */
+function removeElementInInterval(id, interval) {
+    setTimeout(function(){removeElement(id)}, interval);
 }

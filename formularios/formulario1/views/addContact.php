@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body id="body">
   
     <?php include ("header.php"); ?>
     <?php include ("../includes/alert.php") ?>
