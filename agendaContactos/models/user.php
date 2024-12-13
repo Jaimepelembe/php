@@ -46,7 +46,7 @@ class User
 
             //Insert the username and password on user table
             require_once "../includes/dataBaseConection.php";
-            $query = "INSERT INTO users (username,userpassword) VALUES(?,?)";
+            $query = "INSERT INTO users (userName,userPassword) VALUES(?,?)";
             $statement = $phpDataObject->prepare($query);
             $userName = $user->getName();
             $userPassword = $user->getPassword();
@@ -135,7 +135,7 @@ class User
         try {
             require_once "../includes/dataBaseConection.php";
 
-            $sql = "SELECT id,username,userpassword FROM users WHERE username=? AND userpassword=?";
+            $sql = "SELECT userId,userName,userPassword FROM users WHERE userName=? AND userPassword=?";
             $statement = $phpDataObject->prepare($sql);
             $userName = $user->getName();
             $userPassword = $user->getPassword();
@@ -149,8 +149,8 @@ class User
             //Verify if the query returned a result or nothing
             if ($numRows > 0) {
                 //Create the variables for the new session
-                $_SESSION["userId"] = $result["id"];
-                $_SESSION["userName"] = $result["username"];
+                $_SESSION["userId"] = $result["userId"];
+                $_SESSION["userName"] = $result["userName"];
                 // $_SESSION["userPassword"] =$result["userpassword"];
                 header("Location: ../views/main.php");
 

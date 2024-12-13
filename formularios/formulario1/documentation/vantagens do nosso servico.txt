@@ -1,8 +1,0 @@
-Vantagens de usar nosso serviço
-O nosso serviço tem como principais vantages:
-Comunicação mais fácil;
-Acessibilidade: Acesse seus contatos de qualquer lugar com acesso à internet;
-Gerenciamento de contatos: Armazene e organize seus contatos de forma eficiente;
-Sincronização automática: Mantenha seus contatos atualizados em todos os seus dispositivos;
-Pesquisa e filtragem: Encontre rapidamente os contatos que você precisa usando ferramentas de pesquisa e filtragem avançadas;
-Proteção contra perda de dados.

@@ -1,6 +1,6 @@
 <?php
 
-$dataSourceName="mysql:host=localhost;dbname=users";
+$dataSourceName="mysql:host=localhost;dbname=agendacontactos";
 $dataBaseUsername="root";
 $dataBasePassword="";
 
