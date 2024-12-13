@@ -1,0 +1,163 @@
+@import url("style.css");
+
+body {
+  /*Box model*/
+  background: var(--colorGray);
+
+  /*Typograph*/
+  font-family: var(--fontContent);
+}
+
+.displayFlex{
+  display:flex;
+}
+
+#formSignup,
+.containerInput {
+  display: flex;
+}
+
+#formSignup,.form {
+  /*Box model*/
+  width: 80%;
+  max-width: 300px;
+  padding: 30px;
+  margin: 0px auto;
+  margin-top: 10%;
+  border-radius: 16px;
+  background-color: var(--colorBlueDark);
+
+  /*Display stuff*/
+  align-items: center;
+  gap: 20px;
+}
+#formSignup{margin-top:5%;}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.containerInput {
+  /*Box model*/
+  max-width: 300px;
+
+  /*Position*/
+  position: relative;
+
+  /*Display stuff*/
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label {
+  /*Typograph*/
+  font-size: 18px;
+  color: var(--colorWhite);
+}
+
+.input {
+  /*Box model*/
+  width: 90%;
+  max-width: 280px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+
+  /*Typograph*/
+  font-size: 16px;
+}
+
+.input:focus {
+  border: 2px solid var(--colorBlueLight);
+}
+
+#iconEye {
+  /*Position*/
+  position: absolute;
+  bottom: 9%;
+  right: 7%;
+
+  /*Typograph*/
+  font-size: 20px;
+  color: var(--colorBlack);
+}
+
+#icone_olho:hover {
+  color: var(--colorBlueLight);
+  cursor: pointer;
+}
+
+#containerOutput {
+  justify-content: space-between;
+  max-width: 336px;
+  gap: 40px;
+}
+
+.button {
+  width: 104px;
+  height: 40px;
+}
+
+
+/*************Style for desktop***************/
+
+@media screen and (min-width: 768px) {
+#formSignup {
+  /*Box model*/
+  max-width: 400px;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.containerInput {
+  max-width: 340px;
+}
+
+.label {
+  /*Typograph*/
+  font-size: 20px;
+}
+
+.input {
+  /*Box model*/
+  width: 320px;
+  max-height: 40px;
+
+  /*Typograph*/
+  font-size: 18px;
+}
+
+#iconEye {
+  /*Position*/
+  position: absolute;
+  bottom: 0%;
+  right: 2%;
+
+  /*Typograph*/
+  font-size: 20px;
+  color: var(--colorBlack);
+}
+
+.smallText {
+  font-size: 16px;
+}
+
+.button {
+  /*Box model*/
+  width: 120px;
+  height: 48px;
+
+  /*Typograph*/
+  font-size: 16px;
+
+}
+
+#containerOutput {
+  gap: 80px;
+}
+
+}
