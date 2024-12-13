@@ -73,59 +73,6 @@ class User
         }
     }
 
-
-
-
-    // protected function loginUser(User $user)
-//     {
-//         try {
-//             require_once "../includes/dataBaseConection.php";
-//             $sql = "SELECT userpassword FROM users WHERE username=? AND userpassword=?";
-//             $statement = $phpDataObject->prepare($sql);
-//             $userName = $user->getName();
-//             $userPassword = $user->getPassword();
-//             $result = $statement->execute([$userName, $userPassword]);
-
-
-    //             //Verify if the query is valid or not
-//             if (!$result) {
-//                 //Finalize the execution
-//                 $phpDataObject = null;
-//                 $statement = null;
-//                 header("Location: ../views/index.php?error=statementfailed");
-//                 exit();
-
-    //             }
-//             //Verify if the query returned a array ou nothing
-//             if ($statement->rowCount() == 0) {
-//                 $phpDataObject = null;
-//                 $statement = null;
-//                 header("Location: ../views/index.php?error=usernotfound");
-//                 exit();
-
-    //             } else {
-//                 $hashedPassword = $statement->fetchAll(PDO::FETCH_ASSOC);
-//                 $checkPassword = password_verify($userPassword, $hashedPassword[0]["userpassword"]);
-
-    //                 if (!$checkPassword) {
-//                     $statement = null;
-//                     header("Location: ../views/index.php?error=wrongpassword");
-//                     exit();
-//                 }else{
-
-    //                 }
-
-    //             }
-
-
-
-    //         } catch (PDOException $exception) {
-//             echo die("Query failed: " . $exception->getMessage());
-
-    //         }
-
-    //     }
-
     /**
      * Verify if a user exist on the database
      * @param $user The user
