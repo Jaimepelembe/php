@@ -24,7 +24,7 @@ class contactController extends Contact
 
                 //Create the object Contact
                 $contact = new Contact($userName, $phoneNumber,$email);
-                echo $userName;
+               # echo $userName;
                 $contact->setUserId($_SESSION["userId"]);
                 $contact->saveContact($contact);
 

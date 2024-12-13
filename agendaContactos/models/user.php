@@ -34,7 +34,6 @@ class User
     // }
 
 
-
     /**
      * Save the new user on the database
      * @param $user The new user created
@@ -121,10 +120,6 @@ class User
     }
 
 
-
-
-
-
     public function getId()
     {
         return $this->id;
@@ -154,6 +149,5 @@ class User
     {
         $this->password = $password;
     }
-
 
 }

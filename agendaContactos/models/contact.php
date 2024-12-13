@@ -28,7 +28,7 @@ class Contact
 
             //Insert the new contact on the table contact  
             require_once "../includes/dataBaseConection.php";
-            $query = "INSERT INTO contact (contact_name,phone_number,email,user_id) VALUES(?,?,?,?)";
+            $query = "INSERT INTO contacts (contactName,phoneNumber,email,userId) VALUES(?,?,?,?)";
             $statement = $phpDataObject->prepare($query);
             $contactName = $contact->getContactName();
             $phoneNumber = $contact->getPhoneNumber();
