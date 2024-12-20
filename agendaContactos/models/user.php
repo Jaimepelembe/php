@@ -58,13 +58,16 @@ class User
             $phpDataObject = null;
             $statement = null;
 
+           
+            
             //Configure a new session
             require_once "../includes/sessionConfig.php";
             //Create the variables for the new session and go to the main page
             $_SESSION["userName"] = $userName;
             $_SESSION["userPassword"] = $userPassword;
-            header("Location: ../views/main.php");
-            die();
+            $_SESSION["status"] = "Usuário cadastrado com sucesso. Faça o login";
+            $_SESSION["class"] = "sucess";
+            header("Location: ../views/login.php");
 
         } catch (PDOException $exception) {
             die("Query failed: " . $exception->getMessage());
