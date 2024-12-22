@@ -8,7 +8,7 @@ padding:0px;
 
 /*Typography*/
 font-family:var(--fontContent);
-font-size:14px;
+font-size:16px;
 }
 
 
@@ -37,7 +37,7 @@ border-collapse:collapse;
 }
 
 .tableHeader{
-background-color:var(--colorBlueLight);
+background-color:var(--colorRed);
 color:var(--colorWhite);}
 
 
@@ -48,7 +48,7 @@ color:var(--colorWhite);
 opacity:1;
 padding:12px;
 vertical-align: top;
-border:1px solid var(--colorWhite20);
+border:1px solid var(--colorWhite);
 }
 
 .tableData{
@@ -56,9 +56,9 @@ letter-spacing:0.35px;
 font-weight:normal;
 padding:8px;
 text-align:center;
-vertical-align: top;
+vertical-align: middle;
 color:var(--colorWhite);
-border:1px solid var(--colorWhite20);
+border:1px solid var(--colorWhite);
 }
 
 
@@ -89,13 +89,17 @@ background-color:var(--colorRedLight20);
 #containerButtons{
 display:flex;
 flex-direction:row;
-gap:20px;
+gap:40px;
+padding:10px 16px;
 
 }
 
 .buttonTable{
     width: 72px;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .buttonEdit{

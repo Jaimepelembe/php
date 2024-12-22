@@ -80,6 +80,12 @@ class contactController extends Contact
 
     }
 
+    public function getAllContacts($userId)
+    {
+         $contact=new Contact("","","","");
+          return $contact->getAllContacts($userId);
+    }
+
 
 
 }

@@ -55,6 +55,39 @@ class Contact
     }
 
 
+    
+
+    protected function getAllContacts($userId)
+    {
+
+        try {
+
+            //Insert the new contact on the table contact  
+            require_once "../includes/dataBaseConection.php";
+            $query = "select contactId, contactName, phoneNumber, email, userId from contacts where userId=?";
+            $statement = $phpDataObject->prepare($query);
+            $statement->execute([$userId]);
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);//Returns a associative array of all the elements selected in the query
+            $numRows = $statement->rowCount();
+
+            //Configure a new session
+            require_once "../includes/sessionConfig.php";
+
+            //Verify if the query returned a result or nothing
+            if ($numRows>0) {
+                return $result; }
+                  
+            else
+                {return null;}
+            }
+
+    catch (PDOException $exception) {
+        die("Failed to get the contacts: " . $exception->getMessage());
+
+    }
+}
+
+
 
 
     public function getId()

@@ -14,24 +14,31 @@
 </tr>
 </thead>
 
-<tbody class="tableBody">
-<tr>
-    <td dataLabel="Id" class="tableData">1 Jan 2021</td>
-    <td dataLabel="Nome" class="tableData">09:00 - 13:00 (UST)</td>
-    <td dataLabel="Número" class="tableData">Weekend</td>
-    <td dataLabel="Email" class="tableData">Online Training</td>
-    <td dataLabel="Acções" class="tableData">  <div id="containerButtons"><Button class="buttonTable button buttonEdit">Editar</Button>  <Button class="buttonTable button">Deletar</Button></div></td>
-    
-</tr>
+<?php 
+require_once "../controllers/contactController.php";
+$contactController= new ContactController();
+$userId=$_SESSION["userId"];
+$arrayContacts=null;
 
-<tr>
-    <td dataLabel="Id" class="tableData">1 Jan 2021</td>
-    <td dataLabel="Nome" class="tableData">09:00 - 13:00 (UST)</td>
-    <td dataLabel="Número" class="tableData">Weekend</td>
-    <td dataLabel="Email" class="tableData">Online Training</td>
-    <td dataLabel="Acções" class="tableData"> <span class="textOpen">[Open]</span></td>
-    
-</tr>
+if($userId){
+    $arrayContacts=$contactController->getAllContacts($userId);
+}
+
+
+?>
+
+<tbody class="tableBody">
+<?php 
+foreach($arrayContacts as $data){
+    echo "<tr>";
+    echo "<td dataLabel='Id' class='tableData'>".$data['contactId']."</td>";
+    echo "<td dataLabel='Nome' class='tableData'>".$data['contactName']."</td>";
+    echo "<td dataLabel='Número' class='tableData'>".$data["phoneNumber"]."</td>";
+    echo "<td dataLabel='Email' class='tableData'>".$data["email"]."</td>";
+    echo "<td dataLabel='Acções' class='tableData'>  <div id='containerButtons'><a class='buttonTable button buttonEdit' href='editContact.php?id=$data[contactId]'>Editar</a>  <a class='buttonTable button'>Deletar</a></div></td>";
+    echo "</tr>";
+                }
+?>
 
 </tbody>
 
