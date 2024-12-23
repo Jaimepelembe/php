@@ -21,22 +21,37 @@
     <?php include ("header.php"); ?>
     <?php include ("../includes/alert.php") ?>
 
+    <?php 
+    if($_SESSION["arryContacts"]){
+        $arrayContacts=$_SESSION["arryContacts"];
+        foreach($arrayContacts as $data){
+            if($data["contactId"]==$_GET["id"]){ //We use the GET method because the id is sended by url
+                $contactName=$data["contactName"];
+                $phoneNumber=$data["phoneNumber"];
+                $email=$data["email"];
+            }
+
+        }
+    }
+    
+    ?>
+
     <form id="formAddContact" class="form flexColumn" onsubmit="return validateAddition()"
         action="viewContacts.php" method="post" tabindex="0" onclick="closeSideBar()">
         <h1 id="titleContact" class="title">Editar contacto</h1>
         <div class="containerInput">
             <label for="nome" class="label">Nome</label>
-            <input type="text" name="nome" id="userName" class="input" />
+            <input type="text" name="nome" id="userName" class="input" value="<?php echo $contactName?>"/>
         </div>
 
         <div class="containerInput">
             <label for="telefone" class="label">Telefone</label>
-            <input type="number" name="telefone" id="phoneNumber" class="input" />
+            <input type="number" name="telefone" id="phoneNumber" class="input" value="<?php echo $phoneNumber?>"/>
         </div>
 
         <div class="containerInput">
             <label for="email" class="label">Email</label>
-            <input type="text" name="email" id="email" class="input" />
+            <input type="text" name="email" id="email" class="input" value="<?php echo $email?>"/>
         </div>
 
         <!--Output section-->

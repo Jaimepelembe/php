@@ -22,9 +22,8 @@ $arrayContacts=null;
 
 if($userId){
     $arrayContacts=$contactController->getAllContacts($userId);
+    $_SESSION["arryContacts"] = $arrayContacts;
 }
-
-
 ?>
 
 <tbody class="tableBody">
