@@ -54,9 +54,6 @@ class Contact
         }
     }
 
-
-    
-
     protected function getAllContacts($userId)
     {
 
@@ -88,7 +85,35 @@ class Contact
 }
 
 
+    protected function updateContact($contact){
+        try {
 
+            //Update the contact on the table contact  
+            require_once "../includes/dataBaseConection.php";
+            $query = "UPDATE contacts SET contactName=?,phoneNumber=?,email=? WHERE contactId=?";
+            $statement = $phpDataObject->prepare($query);
+            $contactName = $contact->getContactName();
+            $phoneNumber = $contact->getPhoneNumber();
+            $email = $contact->getEmail();
+            $contactId = $contact->getId();
+            $statement->execute([$contactName, $phoneNumber, $email, $contactId]);//Lerning step
+            // $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
+            // $statement->execute([$userName, $hashedPassword]);//Secure password
+
+            //Finalizate the exectution
+            $phpDataObject = null;
+            $statement = null;
+            $_SESSION["status"]="Contacto actualizado com sucesso";
+            $_SESSION["class"]="sucess";
+            header("Location: ../views/viewContacts.php");
+            die();
+
+        } catch (PDOException $exception) {
+            die("Failed to save the contact: " . $exception->getMessage());
+
+        }
+
+    }
 
     public function getId()
     {

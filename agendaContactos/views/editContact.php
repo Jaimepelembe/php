@@ -22,6 +22,7 @@
     <?php include ("../includes/alert.php") ?>
 
     <?php 
+
     if($_SESSION["arryContacts"]){
         $arrayContacts=$_SESSION["arryContacts"];
         foreach($arrayContacts as $data){
@@ -29,15 +30,22 @@
                 $contactName=$data["contactName"];
                 $phoneNumber=$data["phoneNumber"];
                 $email=$data["email"];
-            }
+                $contactId=$data["contactId"];
+                //Configure the session variables
+                 $_SESSION["contactId"]=$contactId;
+                
 
+                // $_SESSION["contactName"]=$contactName;
+                // $_SESSION["phoneNumber"]=$phoneNumber;
+                // $_SESSION["email"]=$email;
+               
+            }
         }
     }
-    
     ?>
-
+   
     <form id="formAddContact" class="form flexColumn" onsubmit="return validateAddition()"
-        action="viewContacts.php" method="post" tabindex="0" onclick="closeSideBar()">
+        action="../includes/editContactHandler.php" method="post" tabindex="0" onclick="closeSideBar()">
         <h1 id="titleContact" class="title">Editar contacto</h1>
         <div class="containerInput">
             <label for="nome" class="label">Nome</label>
@@ -63,10 +71,8 @@
     </form>
     <?php include ("footer.php") ?>
     <?php include ("modal.php") ?>
-
-
-
 </body>
+
 <!--Javascript-->
 <script src="javascript/header.js"></script>
 <script src="javascript/validation.js"></script>

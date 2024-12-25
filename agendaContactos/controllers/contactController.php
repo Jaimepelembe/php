@@ -38,6 +38,37 @@ class contactController extends Contact
 
     }
 
+ /**
+     * Update the data of the contact from the form 
+     * @param $userName the name of the user
+     * @param $userPassword the Password of the user
+     * 
+     * **/
+    
+    public function updateContactData($userName, $phoneNumber, $email,$id)
+    {
+        require_once "../includes/validation.php";
+        if (validateTextFieldSize('nome',$userName,2,40) && validatePhoneNumber($phoneNumber) && validateEmail($email) && $id>0) {
+
+            try {
+                //Initialize the session
+                require_once "../includes/sessionConfig.php";
+
+                //Create the object Contact
+                $contact = new Contact($userName, $phoneNumber,$email);
+                $contact->setId($id);
+                $contact->updateContact($contact);
+
+            } catch (PDOException $exception) {
+                die("User criation failed: " . $exception->getMessage());
+            }
+
+        } else {
+           // header("Location: ../views/viewContacts.php");
+        }
+
+    }
+
     public function verifyUser($userName, $userPassword)
     {
         require_once "../includes/validation.php";
@@ -59,7 +90,7 @@ class contactController extends Contact
 
     }
 
-    protected function getDataForm()
+    private function getDataForm()
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //require_once "userController.php";
@@ -86,6 +117,7 @@ class contactController extends Contact
           return $contact->getAllContacts($userId);
     }
 
+ 
 
 
 }
