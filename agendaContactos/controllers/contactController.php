@@ -42,6 +42,8 @@ class contactController extends Contact
      * Update the data of the contact from the form 
      * @param $userName the name of the user
      * @param $userPassword the Password of the user
+     * @param $phoneNumber the number of the user
+     * @param $id the Id of the contact
      * 
      * **/
     
@@ -64,10 +66,36 @@ class contactController extends Contact
             }
 
         } else {
-           // header("Location: ../views/viewContacts.php");
+            header("Location: ../views/viewContacts.php");
         }
 
     }
+
+
+ /**
+     * Delete the contact on the database 
+     * @param $id the Id of the contact
+     * **/
+    
+    public function deleteContact($id){
+        if($id>0){
+        
+            try {
+                //Create the object Contact
+                $contact = new Contact("", "","");
+                $contact->setId($id);
+                $contact->deleteContact($contact);
+
+            } catch (PDOException $exception) {
+                die("Failed to delete the contact: " . $exception->getMessage());
+            }
+
+        } else {
+            header("Location: ../views/viewContacts.php");
+        }
+
+    }
+
 
     public function verifyUser($userName, $userPassword)
     {
@@ -116,8 +144,6 @@ class contactController extends Contact
          $contact=new Contact("","","","");
           return $contact->getAllContacts($userId);
     }
-
- 
 
 
 }

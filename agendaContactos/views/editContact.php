@@ -33,11 +33,6 @@
                 $contactId=$data["contactId"];
                 //Configure the session variables
                  $_SESSION["contactId"]=$contactId;
-                
-
-                // $_SESSION["contactName"]=$contactName;
-                // $_SESSION["phoneNumber"]=$phoneNumber;
-                // $_SESSION["email"]=$email;
                
             }
         }

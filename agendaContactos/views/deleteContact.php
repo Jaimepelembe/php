@@ -1,6 +1,7 @@
-<?php require_once "sessionConfig.php";
+<?php 
+//require_once "sessionConfig.php";
 
-if (isset($_SESSION["status"]) && isset($_SESSION["class"])) {
+if (!empty($_POST["status"]) && isset($_SESSION["class"])) {
   ?>
 
   <!--The alert element-->

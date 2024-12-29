@@ -115,6 +115,39 @@ class Contact
 
     }
 
+    /**
+     * 
+     * 
+     *@param $contact The contact of a user
+     * @return never
+     */
+    protected function deleteContact($contact){
+        try {
+
+            //Update the contact on the table contact  
+            require_once "../includes/dataBaseConection.php";
+            $query = "DELETE FROM contacts WHERE contactId=?";
+            $statement = $phpDataObject->prepare($query);
+            $contactId = $contact->getId();
+            $statement->execute([$contactId]);
+            // $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
+            // $statement->execute([$userName, $hashedPassword]);//Secure password
+
+            //Finalizate the exectution
+            $phpDataObject = null;
+            $statement = null;
+            $_SESSION["status"]="Contacto deletado com sucesso";
+            $_SESSION["class"]="sucess";
+            header("Location: ../views/viewContacts.php");
+            die();
+
+        } catch (PDOException $exception) {
+            die("Failed to delete the contact: " . $exception->getMessage());
+
+        }
+
+    }
+
     public function getId()
     {
         return $this->id;

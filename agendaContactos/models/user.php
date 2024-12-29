@@ -79,7 +79,7 @@ class User
      * Verify if a user exist on the database
      * @param $user The user
      */
-    protected function checkUser(User $user)
+    public function checkUser(User $user)
     {
         try {
             require_once "../includes/dataBaseConection.php";

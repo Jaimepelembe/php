@@ -34,7 +34,10 @@ foreach($arrayContacts as $data){
     echo "<td dataLabel='Nome' class='tableData'>".$data['contactName']."</td>";
     echo "<td dataLabel='Número' class='tableData'>".$data["phoneNumber"]."</td>";
     echo "<td dataLabel='Email' class='tableData'>".$data["email"]."</td>";
-    echo "<td dataLabel='Acções' class='tableData'>  <div id='containerButtons'><a class='buttonTable button buttonEdit' href='editContact.php?id=$data[contactId]'>Editar</a>  <a class='buttonTable button'>Deletar</a></div></td>";
+    echo "<td dataLabel='Acções' class='tableData'>  <div id='containerButtons'>
+    <a class='buttonTable button buttonEdit' href='editContact.php?id=$data[contactId]'>Editar</a>  
+    <a class='buttonTable button' href='../includes/deleteContactHandler.php?id=$data[contactId]'>Deletar</a>
+    </div></td>";
     echo "</tr>";
                 }
 ?>

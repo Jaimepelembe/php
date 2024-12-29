@@ -10,9 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Session configuration
     include("sessionConfig.php");//Start the session
     $contactId= $_SESSION["contactId"];
-    echo $contactId;
-
-    
+   
     //Instantiate usercontroller
    $contactController = new contactController();
    $contactController->updateContactData($userName, $phoneNumber,$email,$contactId);

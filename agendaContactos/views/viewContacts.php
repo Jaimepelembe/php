@@ -9,12 +9,14 @@
 <!--Style CSS-->
 <link rel="stylesheet" href="styles/main.css" media="all">
 <link rel="stylesheet" href="styles/header.css" media="all">
+<link rel="stylesheet" href="styles/alert.css" media="all">
 <link rel="stylesheet" href="styles/tableStyle.css" media="all">
 <link rel="stylesheet" href="styles/tableMobile.css" media="all and (max-width:768px)">
 </head>
 
 <body>
 <?php include("header.php"); ?>
+<?php include ("../includes/alert.php") ?>
 
 <main id="main" tabindex="0" onclick="closeSideBar()">
 <?php include("responsiveTable.php") ?>
@@ -24,5 +26,8 @@
 <?php include("footer.php");?>
 
 </body>
+
+<!--Javascript-->
+<script src="javascript/validation.js"></script>
 
 </html>
