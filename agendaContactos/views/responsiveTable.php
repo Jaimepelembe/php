@@ -1,9 +1,21 @@
 
 <div class="tableContainer">
-<section id="tableHeader" class="flexRow">
+<section id="sectionTable" class="flexRow">
   <h1 class="heading">Contactos</h1>
-  
-
+  <div class="boxForm">
+      <form  id="searchForm" action="../includes/searchContactHandler.php" method="post" tabindex="0" autocomplete="on"  onsubmit="return validateSearchContact()">
+        <div id="searchInput" class="inputBox flexRow">
+          <input
+            type="text"
+            name="searchBox"
+            id="searchBox"
+            class="input required"
+            autocomplete="name"
+          />
+          <button  id="buttonSearch" class="button" type="submit">Pesquisar</button>
+          </div>
+</form>
+</div>
 </section>
 
 <table class="table">
@@ -24,9 +36,13 @@ $contactController= new ContactController();
 $userId=$_SESSION["userId"];
 $arrayContacts=null;
 
-if($userId){
+if($userId and empty($_SESSION["contactsFounded"])){
     $arrayContacts=$contactController->getAllContacts($userId);
     $_SESSION["arryContacts"] = $arrayContacts;
+}
+else{
+$arrayContacts=$_SESSION["contactsFounded"];
+unset($_SESSION["contactsFounded"]);
 }
 ?>
 
@@ -49,19 +65,5 @@ foreach($arrayContacts as $data){
 </tbody>
 
 </table>
-
- <!--The alert element
- <section id="deleteContact" class="flexColumn ">
-    <div id="containerMessage">
-      <p class="paragraph">Apagar contacto?
-      </p>
-    </div>
-
-<div class="flexRow" id="containerButton">
-   <a class="button" id="buttonYes" href='../includes/deleteContactHandler.php?id='>Sim</a>
-   <a class="button buttonRed" id="buttonNo" href="viewContacts.php">Nao</a>
-  </div>
-  </section>
--->
 
 </div>

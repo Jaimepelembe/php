@@ -31,6 +31,36 @@ color:var(--colorWhite);
 margin-bottom:40px;
 }
 
+
+#sectionTable{
+justify-content: space-between;
+margin-bottom:40px;
+
+}
+
+#searchInput{
+gap:20px;
+}
+
+#searchBox{
+border-radius:8px;
+padding:10px;
+border:none;
+outline:none;
+}
+
+#searchBox:focus{
+border:solid 2px var(--colorBlueLight);
+}
+
+#buttonSearch{width:108px;
+background-color:var(--colorBlueLight);
+}
+
+#buttonSearch:hover{
+background-color:var(--colorBlueLight30);
+}
+
 .table{
 width:100%;
 border-collapse:collapse; 

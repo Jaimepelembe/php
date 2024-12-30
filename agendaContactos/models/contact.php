@@ -16,7 +16,6 @@ class Contact
 
     }
 
-
     /**
      * Save the new Contact on the database
      * @param $contact The new contact created
@@ -67,8 +66,11 @@ class Contact
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);//Returns a associative array of all the elements selected in the query
             $numRows = $statement->rowCount();
 
-            //Configure a new session
-            require_once "../includes/sessionConfig.php";
+            //Finalize the execution
+            $phpDataObject=null;
+            $statement=null;
+
+        
 
             //Verify if the query returned a result or nothing
             if ($numRows>0) {
@@ -133,7 +135,7 @@ class Contact
             // $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
             // $statement->execute([$userName, $hashedPassword]);//Secure password
 
-            //Finalizate the exectution
+            //Finalizate the execution
             $phpDataObject = null;
             $statement = null;
             $_SESSION["status"]="Contacto deletado com sucesso";
@@ -147,6 +149,42 @@ class Contact
         }
 
     }
+
+/**
+ * @param $contact The contact of a user  */
+protected function searchContacts($contact){
+
+    try{
+        require_once "../includes/dataBaseConection.php";
+        //Search contacts on the table contact using the name and the user Id
+        $query="select contactId, contactName,phoneNumber,email from contacts where userId=? and contactName=?";
+        $statement=$phpDataObject->prepare($query);
+        $userId=$contact->getUserId();
+        $contactName=$contact->getContactName();
+        $statement->execute([$userId,$contactName]);
+        $result=$statement->fetchAll(PDO::FETCH_ASSOC);
+        $numRows=$statement->rowCount();
+
+        //Configure a new session
+        require_once "../includes/sessionConfig.php";
+        
+        //Verify if the query returned a result or nothing
+        if($numRows>0){
+            $_SESSION["contactsFounded"]= $result;
+        }
+
+          //Finalize the execution
+          $phpDataObject=null;
+          $statement=null; 
+          header("Location: ../views/viewContacts.php" );
+          die();
+
+    }
+    catch(PDOException $exception){
+     die("Failed to search the contact: ". $exception->getMessage());
+    }
+}
+
 
     public function getId()
     {

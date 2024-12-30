@@ -71,6 +71,32 @@ class contactController extends Contact
 
     }
 
+    /**
+     * Search a contact on the database
+     * @param mixed $contactName the name of the contact
+     * @param mixed $UserId the id of the user of the system
+     */
+public function searchContact($contactName,$userId){
+    require_once "../includes/validation.php";
+    if(validateTextFieldSize("Conteudo da pesquisa",$contactName,2,40) && $userId>0){
+try{
+    require_once "../includes/sessionConfig.php";
+
+    //Create the object contact
+    $contact = new Contact($contactName,"","");
+    $contact->setUserId($userId);
+    $contact->searchContacts($contact);
+
+} 
+catch(PDOException $exception){
+    die("Search of the contact failed". $exception->getMessage());
+
+}
+}else{
+    header("Localtion:../views/viewContacts.php");
+}
+
+    }
 
  /**
      * Delete the contact on the database 
