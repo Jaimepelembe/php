@@ -1,6 +1,10 @@
 
 <div class="tableContainer">
-<h1 class="heading">Contactos</h1>
+<section id="tableHeader" class="flexRow">
+  <h1 class="heading">Contactos</h1>
+  
+
+</section>
 
 <table class="table">
 <thead class="tableHeader">
@@ -36,7 +40,7 @@ foreach($arrayContacts as $data){
     echo "<td dataLabel='Email' class='tableData'>".$data["email"]."</td>";
     echo "<td dataLabel='Acções' class='tableData'>  <div id='containerButtons'>
     <a class='buttonTable button buttonEdit' href='editContact.php?id=$data[contactId]'>Editar</a>  
-    <a class='buttonTable button' href='../includes/deleteContactHandler.php?id=$data[contactId]'>Deletar</a>
+    <a class='buttonTable button'  href='../includes/deleteContactHandler.php?id=$data[contactId]' >Deletar</a>
     </div></td>";
     echo "</tr>";
                 }
@@ -45,5 +49,19 @@ foreach($arrayContacts as $data){
 </tbody>
 
 </table>
+
+ <!--The alert element
+ <section id="deleteContact" class="flexColumn ">
+    <div id="containerMessage">
+      <p class="paragraph">Apagar contacto?
+      </p>
+    </div>
+
+<div class="flexRow" id="containerButton">
+   <a class="button" id="buttonYes" href='../includes/deleteContactHandler.php?id='>Sim</a>
+   <a class="button buttonRed" id="buttonNo" href="viewContacts.php">Nao</a>
+  </div>
+  </section>
+-->
 
 </div>

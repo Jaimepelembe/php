@@ -18,9 +18,10 @@
 <?php include("header.php"); ?>
 <?php include ("../includes/alert.php") ?>
 
-<main id="main" tabindex="0" onclick="closeSideBar()">
-<?php include("responsiveTable.php") ?>
 
+<main id="main" tabindex="0" onclick="closeSideBar()">
+<!--- <?php include ("deleteContact.php") ?> -->
+<?php include("responsiveTable.php") ?>
 </main>
 
 <?php include("footer.php");?>
@@ -28,6 +29,6 @@
 </body>
 
 <!--Javascript-->
+<script src="javascript/header.js"></script>
 <script src="javascript/validation.js"></script>
-
 </html>

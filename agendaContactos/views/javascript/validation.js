@@ -276,3 +276,14 @@ function removeElementInInterval(id, interval) {
 }
 
 removeElementInInterval("alert", 4000); //Removes the alert in a interval of 4 seconds
+
+/**
+ * Shows the session delete contact
+ * @param Id The Id of the contact
+ *
+ */
+function showSectionDeleteContact() {
+    const sectionDeleteContact = document.getElementById("deleteContact");
+    sectionDeleteContact.style.display="flex";
+  }
+  
