@@ -171,5 +171,4 @@ catch(PDOException $exception){
           return $contact->getAllContacts($userId);
     }
 
-
 }

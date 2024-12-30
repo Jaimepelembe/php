@@ -157,11 +157,11 @@ protected function searchContacts($contact){
     try{
         require_once "../includes/dataBaseConection.php";
         //Search contacts on the table contact using the name and the user Id
-        $query="select contactId, contactName,phoneNumber,email from contacts where userId=? and contactName=?";
+        $query="select contactId, contactName,phoneNumber,email from contacts where userId=? and contactName like ?";
         $statement=$phpDataObject->prepare($query);
         $userId=$contact->getUserId();
         $contactName=$contact->getContactName();
-        $statement->execute([$userId,$contactName]);
+        $statement->execute([$userId,"%$contactName%"]);
         $result=$statement->fetchAll(PDO::FETCH_ASSOC);
         $numRows=$statement->rowCount();
 
@@ -184,7 +184,6 @@ protected function searchContacts($contact){
      die("Failed to search the contact: ". $exception->getMessage());
     }
 }
-
 
     public function getId()
     {
